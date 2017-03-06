@@ -14,6 +14,7 @@ $(document).ready(function() {
 		['Sun', 27.9]
 	];
 
+;
 	for(var i=0;i<planets.length; i++){
 		$("select").append("<option value="+planets[planets.length-1-i][1]+">"+planets[planets.length-1-i][0]+"</option>");
 
@@ -23,7 +24,7 @@ $(document).ready(function() {
 
 
   $("#calculate").click(function(){
-    $("#result").html("You are on "+$("select option:selected").html()+", you weigh "+$("#weight").val() * $("select option:selected").val()+"lbs.");
+    $("#result").html("You are on "+$("select option:selected").html()+", you weigh "+Math.round($("#weight").val() * $("select option:selected").val()*100)/100+" lbs.");
     console.log($("planet").val());
   })
   $('#pluto').change(function() {
